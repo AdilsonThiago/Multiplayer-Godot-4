@@ -28,9 +28,12 @@ func par_desconectado(id):
 	pass
 
 func falha_na_conexao():
+	par = null
+	multiplayer.set_multiplayer_peer(null)
 	pass
 
 func queda_do_servidor():
+	get_tree().quit()
 	pass
 
 @rpc(any_peer)
@@ -80,3 +83,10 @@ func retornar_lista():
 	return jogadores
 	pass
 
+func retornar_ip():
+	var lista_ip = IP.get_local_addresses()
+	for i in range(lista_ip.size()):
+		if lista_ip[i].begins_with("192"):
+			return lista_ip[i]
+	return ip
+	pass

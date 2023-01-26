@@ -12,7 +12,6 @@ grow_vertical = 2
 script = ExtResource("1_2suav")
 
 [node name="ListaJogadores" type="ItemList" parent="."]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -26,7 +25,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Criar" type="Button" parent="."]
-layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -38,7 +36,6 @@ grow_vertical = 0
 text = "Criar servidor"
 
 [node name="Conectar" type="Button" parent="."]
-layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -53,7 +50,6 @@ grow_vertical = 0
 text = "Entrar Servidor"
 
 [node name="Comecar" type="Button" parent="."]
-layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -68,7 +64,6 @@ grow_vertical = 0
 text = "Começar jogo"
 
 [node name="IpEdit" type="LineEdit" parent="."]
-layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -83,7 +78,6 @@ grow_vertical = 2
 placeholder_text = "127.0.0.1"
 
 [node name="NomeEdit" type="LineEdit" parent="."]
-layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -99,7 +93,6 @@ text = "Jogador"
 placeholder_text = "Jogador"
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
 offset_left = 707.0
 offset_top = 116.0
 offset_right = 841.0
@@ -109,7 +102,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
-layout_mode = 1
 offset_left = 707.0
 offset_top = 184.0
 offset_right = 841.0
@@ -118,5 +110,13 @@ text = "Nome"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="InfoIP" type="Label" parent="."]
+offset_left = 733.0
+offset_top = 257.0
+offset_right = 1129.0
+offset_bottom = 324.0
+text = "Use este ip para se conectar ao servidor:"
+
 [connection signal="pressed" from="Criar" to="." method="_on_criar_pressed"]
 [connection signal="pressed" from="Conectar" to="." method="_on_conectar_pressed"]
+[connection signal="pressed" from="Comecar" to="." method="_on_comecar_pressed"]

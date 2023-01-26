@@ -1,3 +1,7 @@
 res://MenuLAN.tscn
-res://networking.gd
 res://MenuLAN.gd
+res://networking.gd
+res://Fase.tscn
+res://Fase.gd
+res://Jogador.gd
+res://Jogador.tscn

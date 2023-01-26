@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dquyh8lebuwu"]
+
+[ext_resource type="Script" path="res://Jogador.gd" id="1_abjos"]
+[ext_resource type="Texture2D" uid="uid://8wrcjmwq8u67" path="res://icon.svg" id="2_602dl"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_1e7gs"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/sync = true
+
+[node name="Jogador" type="Node2D"]
+script = ExtResource("1_abjos")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_602dl")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_1e7gs")
+
+[node name="NicknameLabel" type="Label" parent="."]
+offset_left = -130.0
+offset_top = -109.0
+offset_right = 132.0
+offset_bottom = -86.0
+theme_override_font_sizes/font_size = 22
+text = "João"
+horizontal_alignment = 1
+vertical_alignment = 1

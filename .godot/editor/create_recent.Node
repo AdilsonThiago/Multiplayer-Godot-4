@@ -1,4 +1,7 @@
 Label
+MultiplayerSynchronizer
+Sprite2D
+Node2D
 LineEdit
 Button
 ItemList
