@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Jogador.gd" id="1_abjos"]
 [ext_resource type="Texture2D" uid="uid://8wrcjmwq8u67" path="res://icon.svg" id="2_602dl"]
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_1e7gs"]
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ci6v0"]
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/sync = true
@@ -15,7 +15,7 @@ script = ExtResource("1_abjos")
 texture = ExtResource("2_602dl")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_1e7gs")
+replication_config = SubResource("SceneReplicationConfig_ci6v0")
 
 [node name="NicknameLabel" type="Label" parent="."]
 offset_left = -130.0

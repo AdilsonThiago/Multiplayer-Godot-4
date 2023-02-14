@@ -11,6 +11,7 @@ var par = null
 var jogadores = []
 
 signal lista_alterada
+signal conexao_resetada
 
 func _ready():
 	multiplayer.connected_to_server.connect(self.conectado_ao_servidor)
@@ -28,12 +29,20 @@ func par_desconectado(id):
 	pass
 
 func falha_na_conexao():
-	par = null
-	multiplayer.set_multiplayer_peer(null)
+	resetar_conexao()
 	pass
 
 func queda_do_servidor():
-	get_tree().quit()
+	if not get_tree().current_scene.name == "LAN":
+		get_tree().change_scene_to_file("res://MenuLAN.tscn")
+	resetar_conexao()
+	pass
+
+func resetar_conexao():
+	par = null
+	multiplayer.set_multiplayer_peer(null)
+	jogadores.clear()
+	emit_signal("conexao_resetada")
 	pass
 
 @rpc(any_peer)
@@ -59,10 +68,14 @@ func remover_jogador(id):
 func criar_servidor():
 	par = ENetMultiplayerPeer.new()
 	par.create_server(PORTA, MAXJOGADORES)
-	multiplayer.set_multiplayer_peer(par)
-	par.peer_disconnected.connect(self.par_desconectado)
-	id = multiplayer.multiplayer_peer.get_unique_id()
-	registrar_jogador(id, nome_jogador)
+	var ip = retornar_ip()
+	if ip.begins_with("192"):
+		multiplayer.set_multiplayer_peer(par)
+		par.peer_disconnected.connect(self.par_desconectado)
+		id = multiplayer.multiplayer_peer.get_unique_id()
+		registrar_jogador(id, nome_jogador)
+	else:
+		resetar_conexao()
 	pass
 
 func entrar_servidor():
@@ -88,5 +101,5 @@ func retornar_ip():
 	for i in range(lista_ip.size()):
 		if lista_ip[i].begins_with("192"):
 			return lista_ip[i]
-	return ip
+	return IPPADRAO
 	pass

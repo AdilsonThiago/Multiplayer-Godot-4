@@ -1,6 +1,10 @@
 0b7126e0c6e86d3ec295a72f5aa6e0bd
-::res://::1674616559
+::res://::1676360311
+Fase.gd::GDScript::-1::1674617754::0::1::::<>Node2D<>::
+Fase.tscn::PackedScene::453797600591798718::1676358659::0::1::::<><>::res://Fase.gd
 icon.svg::CompressedTexture2D::2362684403379309654::1670351868::1670351895::1::::<><>::
-MenuLAN.gd::GDScript::-1::1674603827::0::1::::<>Control<>::
-MenuLAN.tscn::PackedScene::6135359107589848970::1674603827::0::1::::<><>::res://MenuLAN.gd
-networking.gd::GDScript::-1::1674603813::0::1::::<>Node<>::
+Jogador.gd::GDScript::-1::1676358105::0::1::::<>Node2D<>::
+Jogador.tscn::PackedScene::244854193035295288::1676358660::0::1::::<><>::res://Jogador.gd<>uid://8wrcjmwq8u67
+MenuLAN.gd::GDScript::-1::1676353608::0::1::::<>Control<>::
+MenuLAN.tscn::PackedScene::6135359107589848970::1676358659::0::1::::<><>::res://MenuLAN.gd
+networking.gd::GDScript::-1::1676358528::0::1::::<>Node<>::

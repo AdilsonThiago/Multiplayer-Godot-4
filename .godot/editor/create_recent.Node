@@ -1,7 +1,8 @@
+Button
 Label
+Panel
 MultiplayerSynchronizer
 Sprite2D
 Node2D
 LineEdit
-Button
 ItemList
